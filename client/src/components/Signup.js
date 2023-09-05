@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import {useNavigate} from 'react-router-dom';
+import styles from "./styles/signup.module.css"
 
 
 const Signup=()=>{
@@ -45,14 +46,14 @@ const Signup=()=>{
 
 
     return (
-        // registration page layout
-        <div className="Registration"> 
-            <h2>Registration page</h2>
-            
-            <input className="inputBox" type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Enter Name"/>
-            <input className="inputBox" type="text" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Email"/>
-            <input className="inputBox" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password"/>
-            <button onClick={collection} className="signUp" type="button">Signup</button>
+        <div className={styles.signupPage}>
+        <div className={styles.signupWrapper}> 
+            <span>Register</span>
+            <input className={styles.inputBox} type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Enter Name"/>
+            <input className={styles.inputBox} type="text" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Email"/>
+            <input className={styles.inputBox} type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password"/>
+            <button onClick={collection} className={styles.signupButton} type="button">Signup</button>
+        </div>
         </div>
     );
 }

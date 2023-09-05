@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom';
+import {Link, Navigate, useNavigate} from 'react-router-dom';
+import styles from "./styles/home.module.css"
 
 const Home=()=> {
     const [products, setProducts]=useState([]);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         getProducts();
@@ -48,34 +50,36 @@ const Home=()=> {
       }
     }
   return (
-    <div className="product-List">
-      <h1>products </h1>
-      <input type="text" className='search-box' placeholder='search product' onChange={searchHandle} />
-      <ul>
-        <li>S.N</li>
-        <li>Name</li>
-        <li>Price</li>
-        <li>Category</li>
-        <li>Operations</li>
-      </ul>
-{/* to map the functions which will protect from repeated entry from own*/}
-      {
-        products.length>0 ? products.map((item, index)=>
-            <ul key={item._id}>
-                <li>{index+1}</li>
-                <li>{item.name}</li>
-                <li>{item.price}</li>
-                <li>{item.category}</li>
-                <li>
-                  <button onClick={()=>deleteProduct(item._id)}>Delete</button>
-                  <Link to ={"/update/"+item._id}>Update</Link>
+    <div className={styles.homePageWrapper}>
+      <div className={styles.productList}>
+        <h2>Products </h2>
+        <input type="text" className={styles.searchbox} placeholder='search product' onChange={searchHandle} />
+        <ul>
+          <li>S.N</li>
+          <li>Name</li>
+          <li>Price</li>
+          <li>Category</li>
+          <li>Operations</li>
+        </ul>
+  {/* to map the functions which will protect from repeated entry from own*/}
+        {
+          products.length>0 ? products.map((item, index)=>
+              <ul key={item._id}>
+                  <li>{index+1}</li>
+                  <li>{item.name}</li>
+                  <li>{item.price}</li>
+                  <li>{item.category}</li>
+                  <li>
+                    <button className={styles.delBtn} onClick={()=>deleteProduct(item._id)}>Delete</button>
+                    <button className={styles.updBtn} onClick={()=>navigate("/update/"+item._id)}>Update</button>
                   </li>
 
 
-            </ul>
-        )
-        :<h2>No result found</h2>
-      }
+              </ul>
+          )
+          :<h2>No result found</h2>
+        }
+      </div>
     </div>
   )
 }

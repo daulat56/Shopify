@@ -24,13 +24,12 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/add" element={<AddProduct/>}/>
           <Route path="/update/:id" element={<UpdateProduct/>}/>
-          <Route path="/logout" element={<h2> logout component</h2>}/>
           <Route path="/profile" element={<h2> profile component</h2>}/>
 
           </Route>
           {/* signup is routed here */} 
           <Route path="/signup" element={<Signup/>}/>
-          <Route path="login" element={<Login/>}/>
+          <Route path="/login" element={<Login/>}/>
       </Routes>
       </BrowserRouter>
       <Footer/>

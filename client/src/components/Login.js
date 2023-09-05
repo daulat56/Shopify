@@ -1,6 +1,8 @@
 // import { ResultType } from "@remix-run/router/dist/utils";
 import React, { useEffect } from "react";
 import {useNavigate} from 'react-router-dom'
+import styles from "./styles/login.module.css"
+
 const Login=()=>{
     const [email,setEmail]=React.useState('');
     const [password,setPassword]=React.useState('');
@@ -14,6 +16,7 @@ const Login=()=>{
             navigate("/");
         }
     })
+
     const navigate=useNavigate();
     const handleLogin= async()=>{
         console.log(email,password);
@@ -37,11 +40,14 @@ const Login=()=>{
         }
     }
     return (
-      <div className="login">
-        <input className="inputBox" type="text" placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)} value={email}/>
-        <input className="inputBox" type="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)} value={password} />
-        <button onClick={handleLogin} className="loginBotton" type="button"> login</button>
-      </div>  
+      <div className={styles.loginPage}>
+        <div className={styles.loginWrapper}>
+          <span>Login</span>
+          <input className={styles.inputBox} type="text" placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)} value={email}/>
+          <input className={styles.inputBox} type="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)} value={password} />
+          <button onClick={handleLogin} className={styles.loginButton} type="button"> login</button>
+        </div> 
+      </div>
     )
 }
 export default Login ;

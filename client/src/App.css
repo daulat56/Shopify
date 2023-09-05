@@ -23,45 +23,6 @@
   background-color: rgb(0, 92, 128);
 }
 
-.Registration {
-  margin-left: 20%;
-}
-
-
-.signUp{
-  
-  margin: 20px;
-  padding: 4px;
-  width: 100px;
-  border: 2px solid rgb(87, 87, 98);
-  cursor: pointer;
-  background-color: rgb(110, 216, 172);
-
-}
-.inputBox{
-  display: block;
-  margin: 20px;
-  padding: 5px;
-  width: 400px;
-  border: 3px solid rgb(29, 104, 173);
-  height: 20px;
-}
-
-.login{
-  margin-left: 15%;
- 
-}
-
-.loginBotton{
-  margin: 1.5%;
-  margin-top: 0.1%;
-  padding: 4px;
-  width: 70px;
-  border: 2px solid rgb(87, 87, 98);
-  cursor: pointer;
-  background-color: rgb(110, 216, 172);
-}
-
 .nav-right{
   text-align: right;
 }
@@ -74,19 +35,7 @@
   /* position: centre; */
   margin-left: 8px;
 }
-.product{
-  margin-left: 20%;
-  margin-top: 5%;
-}
-.add-button{
-  margin: 1.5%;
-  margin-top: 0.1%;
-  padding: 4px;
-  width: 70px;
-  border: 2px solid rgb(87, 87, 98);
-  cursor: pointer;
-  background-color: rgb(110, 216, 172);
-}
+
 
 .invalid-input{
   color: red;
@@ -94,56 +43,4 @@
   display: block;
   margin-top:-20px;
 
-}
-
-.product-List{
-  text-align: center;
-  margin-top: 30px;
-}
-
-.product-List ul li{
-  display: inline-block;
-  border:1px solid black;
-  padding:5px;
-  width: 150px;
-}
-.product-List ul{
-  margin:0;
-}
-
-.search-box{
-  width: 400px;
-  margin: 20px;
-  height: 30px;
-  /* border: crimson; */
-  border-color: #4bbca5;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
